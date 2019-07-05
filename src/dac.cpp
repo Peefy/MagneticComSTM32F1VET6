@@ -13,6 +13,6 @@ static void duguDACInit(){
 void duguAnalogWrite(uint16 val, uint8 channel){
     if (__isDACInit == 0)
         duguDACInit();
-    dac_write_channel(DAC, DAC_CH1, val);
+    dac_write_channel(DAC, channel, val);
 }
 

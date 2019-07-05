@@ -27,14 +27,12 @@ void timer2ISR(){
 void setup() {
     Serial1.begin(SERIAL_BAUD);
     Serial1.println("Hello Magnetic Communication STM32F103VET6!");
-    rcc_clk_enable(RCC_GPIOA);
-    digitalWrite(PA4, HIGH);
+
     Timer2.setPeriod(TIMER_MS * 1000);
     Timer2.attachInterrupt(TIMER_CHANNEL, timer2ISR);
 
     pinMode(PIN_LED, OUTPUT);
     digitalWrite(PIN_LED, LOW);
-    
 }
 
 void loop() {
