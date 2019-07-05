@@ -4,6 +4,7 @@
         "PLATFORMIO_CALLER": "vscode"
     },
     "files.associations": {
-        "libmaple.h": "c"
+        "libmaple.h": "c",
+        "adc.h": "c"
     }
 }
