@@ -5,11 +5,11 @@ double adVal = 0.0;
 char sendStr[30] = "";
 String readString = "";
 int outT = 0;
-int data[DATA_LEN] = {1, 0, 0, 1, 1, 1, 0, 1};
+int databits[DATA_LEN] = {1, 0, 0, 1, 1, 1, 0, 1};
 
 void timer2ISR(){
     auto carrier = sin(2 * PI * 0.01 * (outT++));
-    duguAnalogWrite((uint16)(carrier * data[0]));
+    duguAnalogWrite(val2ad(carrier * databits[0]));
 }
 
 void setup() {
@@ -24,13 +24,16 @@ void setup() {
 }
 
 void loop() {
-    delay(20);
+    delay(MAIN_LOOP_DELAY_MS);
     adVal = analogRead(PIN_AD); 
     sprintf(sendStr, "C1:%.2f\r\nC2:%.2f\r\nC3:%.2f\r\n", adVal, adVal, ad2val(adVal));
     readString = Serial1.readString();
-    if (readString.startsWith("R1")){
-        readString.replace("R1", "");
-        
+    if (readString.startsWith("R:")){
+        readString.replace("R:", "");
+        auto data = readString.toInt();
+        for (size_t i = 0; i < DATA_LEN; i++){
+            databits[i] = BIT_GET(data, i);
+        }    
     }
 }
 
