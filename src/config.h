@@ -8,12 +8,15 @@
 #include "modulation.h"
 #include "demodulation.h"
 #include "dac.h"
+#include "chirp.h"
 #include "mylib.h"
 
 // pin config
-#define PIN_LED PB0
-#define PIN_AD  PA0
-#define PIN_DA  PC1
+#define PIN_LED  PB0
+#define PIN_AD1  PA0
+#define PIN_AD2  PA1
+#define PIN_DA1  PA4
+#define PIN_DA2  PA5
 
 // serial config
 #define DATA_LEN 8
@@ -21,6 +24,7 @@
 
 // timer config
 #define TIMER_MS 10
+#define TIMER_CHANNEL 1
 #define MAIN_LOOP_DELAY_MS 20
 
 // adc config

@@ -5,9 +5,10 @@
 
 typedef struct 
 {
-    double fs;
-    double fc;
-    double rc;
+    double Ts;
+    double Fs;
+    double Fc;
+    double Rc;
 }DemodulationConfigTypedef;
 
 extern DemodulationConfigTypedef DemodulationConfig;
