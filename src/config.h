@@ -4,6 +4,7 @@
 
 #include <Arduino.h>
 #include <HardwareTimer.h>
+#include <libmaple/dac.h>
 
 #include "modulation.h"
 #include "demodulation.h"

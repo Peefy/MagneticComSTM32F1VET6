@@ -11,8 +11,6 @@ int databitsIndex = 0;
 double chirpMu = 2.0;
 auto carrier = 0.0;
 
-extern dac_dev dac;
-
 void timer2ISR(){
     digitalWrite(PIN_LED, LOW);
     outT += ModulationConfig.Ts;
