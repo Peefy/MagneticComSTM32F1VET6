@@ -39,6 +39,8 @@ void setup() {
     dac_init(DAC, DAC_CH1 | DAC_CH2);
     dac_write_channel1(2024);
     dac_write_channel2(1024);
+    DAC9767_Init();
+    DAC9767_WriteData1(0xAA);
 }
 
 void loop() {

@@ -21,7 +21,7 @@ void DAC9767_Init(){
     pinMode(DA1_WRT, OUTPUT); 
 }
 
-void DAC9767_WriteData(int16_t val, uint8_t channel){
+void DAC9767_WriteData1(int16_t val){
     int sign = BIT_GET(val, 15);
     digitalWrite(DA1_CLK, LOW);
     digitalWrite(DA1_WRT, LOW);
