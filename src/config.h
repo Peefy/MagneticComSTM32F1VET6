@@ -13,8 +13,8 @@
 
 // pin config
 #define PIN_LED  PB0
-#define PIN_AD1  PA0
-#define PIN_AD2  PA1
+#define PIN_AD1  PC4
+#define PIN_AD2  PC5
 #define PIN_DA1  PA4
 #define PIN_DA2  PA5
 
@@ -24,8 +24,8 @@
 
 // timer config
 #define TIMER_MS 10
-#define TIMER_CHANNEL 1
-#define MAIN_LOOP_DELAY_MS 20
+#define TIMER_CHANNEL 2
+#define MAIN_LOOP_DELAY_MS 200
 
 // adc config
 #define ADC_BIT12_FLOAT 4096.0

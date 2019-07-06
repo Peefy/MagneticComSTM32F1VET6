@@ -3,24 +3,25 @@
 
 double adVal1 = 0.0;
 double adVal2 = 0.0;
-char sendStr[60] = "";
+char sendStr[255] = "";
 String readString = "";
 double outT = 0.0;
 int databits[DATA_LEN] = {1, 0, 0, 1, 1, 1, 0, 1};
 int databitsIndex = 0;
 double chirpMu = 2.0;
+auto carrier = 0.0;
+
+extern dac_dev dac;
 
 void timer2ISR(){
     digitalWrite(PIN_LED, LOW);
     outT += ModulationConfig.Ts;
-    auto carrier = sin(2 * PI * ModulationConfig.Fc * outT);
+    carrier = sin(2 * PI * ModulationConfig.Fc * outT);
     if (outT >= (1.0 / ModulationConfig.Rc)){
         outT = 0;
         if (++databitsIndex >= DATA_LEN)
             databitsIndex = 0;
     }
-    duguAnalogWrite(val2ad(carrier * (databits[databitsIndex] == 0 ? -1 : 1)), DAC_CH1);
-    duguAnalogWrite(val2ad(generateChirp(outT, chirpMu * chirpMu / TIMER_MS)), DAC_CH2);
     digitalWrite(PIN_LED, HIGH);
 }
 
@@ -33,21 +34,24 @@ void setup() {
 
     pinMode(PIN_LED, OUTPUT);
     digitalWrite(PIN_LED, LOW);
+
+    pinMode(PIN_AD1, INPUT_ANALOG);
+    pinMode(PIN_AD2, INPUT_ANALOG);
+    analogWrite(PB1, 35);
+    dac_init(DAC, DAC_CH1 | DAC_CH2);
+    dac_write_channel1(2024);
+    dac_write_channel2(1024);
 }
 
 void loop() {
     delay(MAIN_LOOP_DELAY_MS);
+
     adVal1 = analogRead(PIN_AD1); 
     adVal2 = analogRead(PIN_AD2);
-    sprintf(sendStr, "C1:%.2f\r\nC2:%.2f\r\nC3:%.2f\r\n", adVal1, adVal2, ad2val(adVal1));
-    readString = Serial1.readString();
-    if (readString.startsWith("R:")) {
-        readString.replace("R:", "");
-        auto data = readString.toInt();
-        for (size_t i = 0; i < DATA_LEN; i++) {
-            databits[i] = BIT_GET(data, i);
-        }    
-    }
+    
+    sprintf(sendStr, "C1:%.2f\r\nC2:%.2f\r\nC3:%.2f\r\n", adVal1, adVal2, carrier);
+    Serial1.print(sendStr);
+
 }
 
 

@@ -1,0 +1,4 @@
+h
+loadbin .pioenvs\genericSTM32F103VE\firmware.bin, 0x08000000
+r
+q
