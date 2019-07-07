@@ -24,24 +24,23 @@
 #define DA1_CLK       PD14
 #define DA1_WRT       PD15                
 
-
 // DA2相关引脚(J3)                   
-#define DA1_DATA0     PE0              
-#define DA1_DATA1     PE1  
-#define DA1_DATA2     PE2  
-#define DA1_DATA3     PE3  
-#define DA1_DATA4     PE4  
-#define DA1_DATA5     PE5  
-#define DA1_DATA6     PE6  
-#define DA1_DATA7     PE7  
-#define DA1_DATA8     PE8  
-#define DA1_DATA9     PE9  
-#define DA1_DATA10    PE10  
-#define DA1_DATA11    PE11  
-#define DA1_DATA12    PE12  
-#define DA1_DATA13    PE13  
-#define DA1_CLK       PE14
-#define DA1_WRT       PE15                       
+#define DA2_DATA0     PE0              
+#define DA2_DATA1     PE1  
+#define DA2_DATA2     PE2  
+#define DA2_DATA3     PE3  
+#define DA2_DATA4     PE4  
+#define DA2_DATA5     PE5  
+#define DA2_DATA6     PE6  
+#define DA2_DATA7     PE7  
+#define DA2_DATA8     PE8  
+#define DA2_DATA9     PE9  
+#define DA2_DATA10    PE10  
+#define DA2_DATA11    PE11  
+#define DA2_DATA12    PE12  
+#define DA2_DATA13    PE13  
+#define DA2_CLK       PE14
+#define DA2_WRT       PE15                       
 
 void DAC9767_Init();
 void DAC9767_WriteData1(int16_t val);

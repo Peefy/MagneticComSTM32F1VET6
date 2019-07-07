@@ -40,17 +40,16 @@ void setup() {
     dac_write_channel1(2024);
     dac_write_channel2(1024);
     DAC9767_Init();
-    DAC9767_WriteData1(0xAA);
 }
 
 void loop() {
-    delay(MAIN_LOOP_DELAY_MS);
-
-    adVal1 = analogRead(PIN_AD1); 
-    adVal2 = analogRead(PIN_AD2);
+    //delay(MAIN_LOOP_DELAY_MS);
+    DAC9767_WriteData1(0xAAA);
+    //adVal1 = analogRead(PIN_AD1); 
+    //adVal2 = analogRead(PIN_AD2);
     
-    sprintf(sendStr, "C1:%.2f\r\nC2:%.2f\r\nC3:%.2f\r\n", adVal1, adVal2, carrier);
-    Serial1.print(sendStr);
+    //sprintf(sendStr, "C1:%.2f\r\nC2:%.2f\r\nC3:%.2f\r\n", adVal1, adVal2, carrier);
+    //Serial1.print(sendStr);
 
 }
 
