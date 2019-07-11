@@ -18,3 +18,12 @@ void DAC9767_WriteData1(int16_t val){
     digitalWrite(DA1_WRT, LOW);
     delay(10);
 }
+
+static void DAC9767_WriteData2(int16_t val){
+    digitalWrite(DA2_CLK, HIGH);
+    digitalWrite(DA2_WRT, HIGH);
+    delay(10);
+    digitalWrite(DA2_CLK, LOW);
+    digitalWrite(DA2_WRT, LOW);
+    delay(10);
+}
