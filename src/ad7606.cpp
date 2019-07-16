@@ -223,3 +223,14 @@ double AD7606_ReadAdcReal(unsigned char channel)
     dAdc = sAdc / 32768.0 * 5.0;
     return dAdc;
 }
+
+void AD7606_TestDemo()
+{
+    AD7606_ConfigAll();
+    AD7606_Scan();
+    for (size_t i = 0; i < 3; i++)
+    {
+        Fifo_AddData(&ADC_Fifo[i], ADC_Convert[i]);
+    } 
+}
+

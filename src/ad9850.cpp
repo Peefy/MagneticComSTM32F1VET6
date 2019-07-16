@@ -190,3 +190,21 @@ void AD9850_WriteWithParrel(DDS_t* dds,unsigned char w0)
     }
 
 }
+
+void AD9850_AllInit(void)
+{
+    AD9850_CommomHardWareInit();
+    {
+        int i = 0;
+        for(i = 0;i < AD9850_NUM ;++i)
+        {
+            AD9850_ResetWithParrel(&AD9850[i]);
+            AD9850_WriteWithParrel(&AD9850[i],0x00);
+        }
+    }
+}
+
+void AD9850_TestDemo()
+{
+    AD9850_AllInit();
+}
