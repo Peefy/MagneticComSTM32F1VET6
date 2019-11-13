@@ -6,6 +6,8 @@
         {
             "name": "Win32",
             "includePath": [
+                "f:/_CodeLanguage/C++/MagneticComSTM32F1VET6/include",
+                "f:/_CodeLanguage/C++/MagneticComSTM32F1VET6/src",
                 "C:/Users/Administrator/.platformio/packages/framework-arduinoststm32-maple/STM32F1/cores/maple",
                 "C:/Users/Administrator/.platformio/packages/framework-arduinoststm32-maple/STM32F1/system/libmaple",
                 "C:/Users/Administrator/.platformio/packages/framework-arduinoststm32-maple/STM32F1/system/libmaple/include",
@@ -49,14 +51,14 @@
                 "C:/Users/Administrator/.platformio/packages/framework-arduinoststm32-maple/STM32F1/libraries/WireSlave/src",
                 "C:/Users/Administrator/.platformio/packages/framework-arduinoststm32-maple/STM32F1/libraries/stm_fft",
                 "C:/Users/Administrator/.platformio/packages/tool-unity",
-                "f:/_CodeLanguage/C++/MagneticComSTM32F1VET6/include",
-                "f:/_CodeLanguage/C++/MagneticComSTM32F1VET6/src",
                 ""
             ],
             "browse": {
                 "limitSymbolsToIncludedHeaders": true,
                 "databaseFilename": "${workspaceRoot}/.vscode/.browse.c_cpp.db",
                 "path": [
+                    "f:/_CodeLanguage/C++/MagneticComSTM32F1VET6/include",
+                    "f:/_CodeLanguage/C++/MagneticComSTM32F1VET6/src",
                     "C:/Users/Administrator/.platformio/packages/framework-arduinoststm32-maple/STM32F1/cores/maple",
                     "C:/Users/Administrator/.platformio/packages/framework-arduinoststm32-maple/STM32F1/system/libmaple",
                     "C:/Users/Administrator/.platformio/packages/framework-arduinoststm32-maple/STM32F1/system/libmaple/include",
@@ -100,13 +102,11 @@
                     "C:/Users/Administrator/.platformio/packages/framework-arduinoststm32-maple/STM32F1/libraries/WireSlave/src",
                     "C:/Users/Administrator/.platformio/packages/framework-arduinoststm32-maple/STM32F1/libraries/stm_fft",
                     "C:/Users/Administrator/.platformio/packages/tool-unity",
-                    "f:/_CodeLanguage/C++/MagneticComSTM32F1VET6/include",
-                    "f:/_CodeLanguage/C++/MagneticComSTM32F1VET6/src",
                     ""
                 ]
             },
             "defines": [
-                "PLATFORMIO=30607",
+                "PLATFORMIO=40000",
                 "STM32F103xE",
                 "ARDUINO=10808",
                 "ARDUINO_ARCH_STM32",
