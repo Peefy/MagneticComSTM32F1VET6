@@ -2,7 +2,6 @@
 #ifndef _MYLIB_H_
 #define _MYLIB_H_
 
-
 #define BIT_CLEAN(var,n)        (var) &= ~(1<<(n))   
 #define BIT_SET(var,n)          (var) |=  (1<<(n))   
 #define BIT_GET(var,n)          (((var)>>(n))&0x01)  

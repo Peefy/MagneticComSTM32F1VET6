@@ -8,9 +8,10 @@
 
 #include "modulation.h"
 #include "demodulation.h"
-#include "dac.h"
-#include "chirp.h"
-#include "mylib.h"
+#include "ad9767.h"        //DAC
+#include "ad7055.h"        //ADC
+#include "chirp.h"         //chirp signal
+#include "mylib.h"         
 
 // pin config
 #define PIN_LED  PB0
